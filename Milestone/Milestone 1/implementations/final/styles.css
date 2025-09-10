@@ -1,0 +1,788 @@
+/* 
+ * Custom styles for the landing page 
+ * This CSS file contains custom styles that extend or override Bootstrap's default styling
+ */
+
+/* Base styling */
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+/* 
+ * Landing wrapper styling 
+ * This is the main container that wraps both navbar and hero section
+ * Provides a consistent background and layout for the entire landing area
+ */
+.landing-wrapper {
+  position: relative; /* Needed for absolute positioning of child elements */
+  /* background-color: #f8f9ff;  Light blue background color */
+  overflow: hidden; /* Prevents content from spilling outside the wrapper */
+  width: 100vw; /* 100% of viewport width */
+  height: 100vh;
+  background-image: url("img/designer_1.png"); /* set the background image */
+  background-size: contain; /* cover the container area */
+  background-position: right; /* center the image */
+  background-repeat: no-repeat; /* don't repeat the image */
+  /* padding: 20px; */
+  color: white;
+  border-radius: 10px;
+}
+
+/* For small screens: make background lighter and reduce height */
+@media (max-width: 1000px) {
+  .landing-wrapper {
+    height: 80vh; /* or any value less than 100vh */
+    background-color: rgba(248, 249, 255, 0.7); /* light overlay color */
+    background-blend-mode: lighten; /* blend bg color with bg image */
+  }
+}
+/* 
+ * Navigation styling 
+ * Extends Bootstrap's navbar component with custom styling
+ */
+.navbar {
+  padding: 1rem 0; /* Adds vertical padding while using Bootstrap's container for horizontal padding */
+  background-color: transparent; /* Makes navbar background transparent to show the landing-wrapper background */
+  position: relative; /* Needed for proper z-index stacking */
+  z-index: 2; /* Ensures navbar appears above the background circle */
+}
+
+/* Align the navbar container with the page containers */
+@media (min-width: 992px) {
+  .navbar .container {
+    padding-left: 165px;
+    padding-right: 165px;
+    max-width: 100%;
+  }
+}
+
+/* Navbar toggler (hamburger button) styling */
+.navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Mobile navbar styling */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-nav {
+    margin-bottom: 1rem;
+    padding-left: 15px;
+  }
+  
+  .navbar-brand {
+    position: relative;
+    left: 0;
+    transform: none;
+    margin: 0 auto;
+  }
+  
+  /* Fix for Buy Now button */
+  .ms-auto {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding-left: 15px;
+  }
+  
+  .ms-auto .btn {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+/* Custom styling for Bootstrap's nav-link class */
+.navbar .nav-link {
+  color: #4a5568; /* Medium gray color for nav links */
+  font-weight: 500; /* Medium font weight for better readability */
+  padding: 0.5rem 1rem; /* Custom padding for nav links */
+}
+
+/* Hover state for nav links */
+.navbar .nav-link:hover {
+  color: #0d1b3e; /* Darker blue on hover for better interaction feedback */
+}
+
+/* 
+ * Overriding Bootstrap's navbar-brand styling 
+ * !important is used to ensure our styles take precedence over Bootstrap's defaults
+ */
+.navbar-brand {
+  color: #37447e !important; /* Dark blue color for the brand/logo text */
+  font-family: "Roboto", sans-serif !important;
+  font-weight: 900 !important;
+  font-size: 26px !important;
+  line-height: 38px !important;
+  letter-spacing: 0px !important;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar-toggler {
+  position: absolute;
+  left: 15px;
+  z-index: 10;
+}
+
+/* Add space for the Buy Now button on medium screens */
+@media (max-width: 991px) {
+  .navbar .container {
+    position: relative;
+    padding-right: 80px;
+  }
+}
+/* 
+ * Hero section styling 
+ * Main content area of the landing page
+ */
+.hero-section {
+  position: relative; /* For proper z-index stacking */
+  min-height: 85vh; /* Takes up most of the viewport height */
+  display: flex; /* Uses flexbox for centering content vertically */
+  align-items: center; /* Centers content vertically */
+}
+
+/* 
+ * Content container styling 
+ * Works with Bootstrap's container class to position the hero content
+ */
+.hero-content {
+  position: relative; /* For proper z-index stacking */
+  z-index: 1; /* Ensures content appears above the background circle */
+  padding: 3rem 0; /* Adds vertical spacing */
+}
+
+/* Add padding to hero content on small screens */
+@media (max-width: 991px) {
+  .hero-content {
+    padding: 2rem 20px;
+  }
+  
+  .container.hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .hero-section {
+    min-height: auto;
+    padding-top: 100px;
+  }
+}
+
+/* Align the hero content with the page containers */
+@media (min-width: 992px) {
+  .container.hero-content {
+    padding-left: 165px;
+    padding-right: 165px;
+    max-width: 100%;
+  }
+}
+
+/* 
+ * Heading styling 
+ * Custom styling for the main headline
+ */
+.hero-heading {
+  font-weight: 700; /* Bold font weight for emphasis */
+  color: #0d1c41; /* Dark blue color for contrast and readability */
+  margin-bottom: 1.5rem; /* Spacing between heading and paragraph */
+  font-size: 2.5rem; /* Large font size for emphasis */
+}
+
+/* 
+ * Paragraph styling 
+ * Custom styling for the descriptive text
+ */
+.hero-text {
+  color: #4a5568; /* Medium gray color for better readability */
+  margin-bottom: 2rem; /* Spacing between paragraph and buttons */
+  line-height: 1.6; /* Increased line height for better readability */
+}
+
+/* 
+ * Button styling 
+ * Extends Bootstrap's button components with custom colors and sizing
+ */
+.btn-primary {
+  background-color: #0d1b3e; /* Dark blue background */
+  border-color: #0d1b3e; /* Matching border color */
+  padding: 0.5rem 1.5rem; /* Custom padding for larger button size */
+}
+
+/* Hover and focus states for primary button */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #162a54; /* Slightly lighter blue on hover/focus */
+  border-color: #162a54; /* Matching border color */
+}
+
+/* Outline button variant */
+.btn-outline-primary {
+  color: #0d1b3e; /* Dark blue text */
+  border-color: #0d1b3e; /* Dark blue border */
+  padding: 0.5rem 1.5rem; /* Custom padding for larger button size */
+}
+
+/* Hover state for outline button */
+.btn-outline-primary:hover {
+  background-color: #0d1b3e; /* Dark blue background on hover */
+  color: white; /* White text on hover for contrast */
+}
+
+/* 
+ * Image container styling 
+ * Custom styling for the container holding the illustration
+ */
+.hero-image-container {
+  display: flex; /* Uses flexbox for centering */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  position: relative; /* For proper z-index stacking */
+  z-index: 1; /* Ensures image appears above the background circle */
+}
+
+/* 
+ * Image styling 
+ * Ensures the image is responsive
+ */
+.hero-image {
+  max-width: 100%; /* Prevents image from overflowing its container */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.card-image {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 14px;
+}
+
+/* .page-main-component {
+  margin-left: 50px;
+} */
+
+.image-container {
+  /* margin-right: 50px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 991px) {
+  .image-container {
+    margin: 20px 0;
+  }
+}
+
+.page-main-text h1 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: #091133;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .page-main-text h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+.page-main-text p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: #6f7cb2;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .page-main-text p {
+    margin-bottom: 40px;
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* optional */
+  gap: 40px; /* spacing between blocks */
+  /* padding: 40px; */
+  padding: 60px 40px;
+}
+
+@media (min-width: 992px) {
+  .page-container {
+    padding: 109px 165px 108px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Reverse order for alternating layouts on mobile */
+  .page-container:nth-child(odd) .image-container {
+    order: -1;
+  }
+}
+
+.page-container > * {
+  flex: 1;
+}
+
+.purhcase-now-button {
+  width: 150px;
+  height: 32px;
+  background-color: #111b47;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .purhcase-now-button {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+}
+.card-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* optional */
+  margin-top: 40px;
+  gap: 30px; /* spacing between blocks */
+  /* padding: 40px;
+  margin: 50px; */
+}
+
+@media (max-width: 767px) {
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-container {
+    margin-top: 80px;
+  }
+}
+
+.card {
+  flex: 1; /* Allows cards to grow and fill the container */
+  border: none;
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+.card h3 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: #091133;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  color: #5d6970;
+}
+
+.final-page h1 {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: #091133;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  .final-page h1 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+.final-page p {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  color: #6f7cb2;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .final-page p {
+    margin-bottom: 35px;
+  }
+}
+
+.final-page-text {
+  /* width: 100vw;
+  height: 100vh; */
+  background-color: #f5f7ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+
+@media (min-width: 992px) {
+  .final-page-text {
+    padding-bottom: 172px;
+    padding-top: 190px;
+  }
+}
+
+.final-page-header-text {
+  padding: 0px 20px;
+}
+
+@media (min-width: 768px) {
+  .final-page-header-text {
+    padding: 0px 100px;
+  }
+}
+
+@media (min-width: 992px) {
+  .final-page-header-text {
+    padding: 0px 350px 0px;
+  }
+}
+
+.final-page h1 {
+  text-align: center;
+}
+
+#price-text {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #222f65;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  #price-text {
+    font-size: 50px;
+    line-height: 66px;
+  }
+}
+
+#price-content {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #37447e;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  #price-content {
+    margin-bottom: 60px;
+  }
+}
+
+#button-text {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #5d6970;
+  margin-bottom: 0px;
+}
+
+.footer {
+  background-color: #E7ECFF;
+  padding: 30px 20px;
+  font-family: Roboto, sans-serif;
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 40px 60px 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    padding: 61px 165px 32px;
+  }
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 15px;
+}
+
+@media (max-width: 767px) {
+  .footer-top {
+    flex-direction: column;
+  }
+}
+
+.footer-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #939ea4;
+}
+
+.footer-title {
+  font-family: Roboto;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: 38px;
+  letter-spacing: 0px;
+  color: #091133;
+}
+.footer-purhcase-now-button {
+  width: 109px;
+  height: 26px;
+  background-color: #111b47;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .footer-purhcase-now-button {
+    width: 150px;
+    height: 32px;
+  }
+}
+.footer-divider {
+  margin: 40px 0 20px;
+  height: 5px;
+  color: black;
+}
+
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 767px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer-links a {
+  margin-right: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #929ecc;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .footer-links a {
+    margin: 0 10px;
+    display: inline-block;
+  }
+}
+
+.footer-icons a {
+  margin-left: 15px;
+}
+
+@media (max-width: 767px) {
+  .footer-icons a {
+    margin: 0 8px;
+  }
+}
+
+.footer-icons img {
+  height: 20px;
+  width: 20px;
+}
+/* 
+ * Responsive adjustments 
+ * Media queries to adjust styling for different screen sizes
+ * These work with Bootstrap's responsive grid system
+ */
+
+/* Large devices (desktops, less than 992px) */
+@media (max-width: 991.98px) {
+  .hero-heading {
+    font-size: 2rem; /* Smaller heading on medium screens */
+  }
+
+  .hero-content {
+    padding: 2rem 0; /* Less padding on medium screens */
+  }
+
+  .hero-image-container {
+    margin-top: 2rem; /* Adds space above image when it stacks below text on medium screens */
+  }
+
+  .navbar {
+    padding: 0.75rem 0; /* Less padding on medium screens */
+  }
+}
+
+/* Medium devices (tablets, less than 768px) */
+@media (max-width: 767.98px) {
+  .hero-heading {
+    font-size: 1.75rem; /* Even smaller heading on small screens */
+  }
+
+  /* 
+   * Modifies Bootstrap's d-flex and gap-3 classes for mobile 
+   * Changes the button container from horizontal to vertical layout
+   */
+  .d-flex.gap-3 {
+    flex-direction: column; /* Stacks buttons vertically */
+    gap: 1rem !important; /* Increases gap between stacked buttons */
+  }
+
+  /* Makes buttons full width on mobile */
+  .btn {
+    display: block; /* Block display for full width */
+    width: 100%; /* Full width */
+  }
+  
+  /* Smaller brand text on mobile */
+  .navbar .navbar-brand {
+    font-size: 1.25rem; /* Smaller font size */
+  }
+
+  /* Adjusts hero section height on mobile */
+  .hero-section {
+    min-height: auto; /* Allows section to shrink to content height */
+  }
+}
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .navbar .nav-link {
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .navbar-brand {
+    font-size: 20px !important;
+  }
+  
+  .hero-heading {
+    font-size: 1.5rem;
+  }
+  
+  .hero-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .page-container {
+    padding: 40px 20px;
+  }
+}
+/* Fix for navbar on mobile */
+@media (max-width: 991px) {
+  .navbar .container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .navbar-nav {
+    margin-bottom: 10px;
+  }
+  
+  .navbar-brand {
+    margin: 10px 0;
+  }
+  
+  .ms-auto {
+    margin-top: 10px;
+  }
+}
+
+/* Fix for SVG curve on mobile */
+.curve {
+  width: 100%;
+  height: auto;
+}

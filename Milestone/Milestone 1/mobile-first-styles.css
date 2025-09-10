@@ -1,0 +1,126 @@
+/* Mobile-First CSS */
+:root {
+  --primary-color: #111b47;
+  --text-dark: #091133;
+  --text-muted: #505f98;
+  --text-light: #5d6970;
+}
+
+/* Base styles (Mobile) */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Pricing Section */
+.pricing-section {
+  background: linear-gradient(135deg, #e7ecff 0%, #f0f4ff 100%);
+}
+
+.price-display {
+  margin: 2rem 0;
+}
+
+/* Mobile Typography */
+h1, h2 {
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.lead, p {
+  color: var(--text-muted);
+}
+
+/* Mobile Spacing */
+section {
+  padding: 3rem 0;
+}
+
+/* Mobile Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile Footer */
+footer {
+  background-color: #e7ecff !important;
+}
+
+.social-links a {
+  transition: transform 0.2s;
+}
+
+.social-links a:hover {
+  transform: scale(1.1);
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+  section {
+    padding: 4rem 0;
+  }
+  
+  .hero-section {
+    min-height: 90vh;
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 992px) {
+  section {
+    padding: 5rem 0;
+  }
+  
+  .hero-section {
+    min-height: 100vh;
+    background-image: url('./images/backgroundImage.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: contain;
+  }
+  
+  .pricing-section {
+    background-image: url('./images/section6.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}

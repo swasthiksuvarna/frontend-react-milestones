@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Build outputs
+public/styles.css
+dist/
+build/
+
+# IDE
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

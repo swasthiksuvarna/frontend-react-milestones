@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- Responsive viewport meta tag - ensures proper rendering and touch zooming on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS - provides the framework's core styling -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Custom CSS - contains our custom styles that override or extend Bootstrap -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Landing Page</title>
+</head>
+
+<body>
+  <!-- Main wrapper for the landing page -->
+  <!-- This wrapper contains both the navbar and hero section with a shared background -->
+  <!-- No Bootstrap classes here as this is a custom container for our specific layout needs -->
+  <div class="landing-wrapper">
+    <!-- Navigation Bar -->
+    <!-- navbar: Core Bootstrap component for navigation -->
+    <!-- navbar-expand-lg: Responsive breakpoint - navbar collapses into a hamburger menu below lg (992px) -->
+    <!-- navbar-light: Sets light color scheme for the navbar (dark text on light background) -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <!-- container: Bootstrap container class - provides a centered, fixed-width container -->
+      <!-- Centers content and provides consistent padding on the sides -->
+      <div class="container">
+        <!-- Hamburger menu toggle button for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Brand/title -->
+        <!-- navbar-brand: Bootstrap class for company/product/project name styling -->
+        <a class="navbar-brand mx-auto" href="#">Landing</a>
+
+        <!-- Collapsible navbar content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <!-- Left navigation links -->
+          <!-- navbar-nav: Bootstrap class for styling nav links within navbar -->
+          <!-- me-auto: Margin-end auto - pushes the element to the left by adding auto margin to the right -->
+          <div class="navbar-nav me-auto">
+            <!-- nav-link: Bootstrap class for styling navigation links with proper spacing and hover states -->
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Contact</a>
+          </div>
+
+          <!-- Right button -->
+          <!-- ms-auto: Margin-start auto - pushes the element to the right by adding auto margin to the left -->
+          <div class="ms-auto">
+            <!-- btn: Core Bootstrap button class -->
+            <!-- btn-primary: Bootstrap contextual color class - uses the primary theme color (customized in our CSS) -->
+            <a href="#" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- This is the main section of the landing page that introduces the product -->
+    <!-- Using a custom hero-section class styled in our CSS -->
+    <section class="hero-section">
+      <!-- container: Bootstrap container class - provides a centered, fixed-width container -->
+      <!-- hero-content: Custom class for additional styling specific to our design -->
+      <div class="container hero-content">
+        <!-- row: Bootstrap grid system row - contains columns and enables the 12-column grid -->
+        <!-- align-items-center: Vertically centers items within the row using flexbox -->
+        <div class="row align-items-center">
+          <!-- Left column with text content -->
+          <!-- col-lg-6: Bootstrap grid column that takes up 6/12 (half) of the container width on large screens (≥992px) -->
+          <!-- On smaller screens (<992px), it defaults to full width (12/12) for better mobile viewing -->
+          <div class="col-lg-6">
+            <!-- Main heading that introduces the product -->
+            <!-- Using custom hero-heading class for specific styling -->
+            <h1 class="hero-heading">Introduce Your Product<br>Quickly & Effectively</h1>
+
+            <!-- Product description paragraph -->
+            <!-- Using custom hero-text class for specific styling -->
+            <p class="hero-text">
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+              commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus
+              mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+              sem. Nulla consequat massa quis enim.
+            </p>
+
+            <!-- Call-to-action buttons -->
+            <!-- d-flex: Bootstrap display utility - creates a flexbox container -->
+            <!-- gap-3: Bootstrap spacing utility - adds gap (1rem = 16px) between flex items -->
+            <div class="d-flex gap-3">
+              <!-- btn: Core Bootstrap button class -->
+              <!-- btn-primary: Bootstrap contextual color class - uses the primary theme color -->
+              <a href="#" class="btn btn-primary">Purchase UI Kit</a>
+              <!-- btn-outline-primary: Bootstrap outline button variant - transparent with colored border -->
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Right column with illustration -->
+          <!-- col-lg-6: Bootstrap grid column that takes up 6/12 (half) of the container width on large screens (≥992px) -->
+          <!-- On smaller screens (<992px), it defaults to full width (12/12) for better mobile viewing -->
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- This is the container for the remaining pages -->
+  <div class="page-container">
+    <!-- This div contains the main header and text -->
+    <div class="page-main-component">
+      <div class="page-main-text">
+        <h1>Light, Fast & Powerful</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+          sem. Nulla consequat massa quis enim.
+        </p>
+      </div>
+      <!-- This container contains the cards -->
+      <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+          <img class="card-image" src="img/Icon.svg" alt="Card Image">
+          <h3>Title goes here</h3>
+          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+          <img class="card-image" src="img/Icon.svg" alt="Card Image">
+          <h3>Title goes here</h3>
+          <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Container for the image -->
+    <div class="image-container">
+      <img src="img/undraw_mobile_login_ikmv.png" alt="Illustration">
+    </div>
+  </div>
+  <!-- second page -->
+  <div class="page-container">
+    <!-- Container for the image -->
+    <div class="image-container">
+      <img src="img/undraw_happy_news_hxmt.png" alt="Illustration">
+    </div>
+    <!-- This div contains the main header and text -->
+    <div class="page-main-component">
+      <div class="page-main-text">
+        <h1>Light, Fast & Powerful</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+          sem. Nulla consequat massa quis enim.
+        </p>
+      </div>
+      <!-- This container contains the cards -->
+    </div>
+  </div>
+  <!-- third page -->
+  <div class="page-container">
+    <!-- Container for the image -->
+    <div class="image-container">
+      <img src="img/undraw_social_influencer_sgsv.png" alt="Illustration">
+    </div>
+    <!-- This div contains the main header and text -->
+    <div class="page-main-component">
+      <div class="page-main-text">
+        <h1>Light, Fast & Powerful</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+          sem. Nulla consequat massa quis enim.
+        </p>
+      </div>
+      <!-- This container contains the cards -->
+    </div>
+  </div>
+  <!-- Fourth page -->
+  <div class="page-container">
+    <!-- Container for the image -->
+    <div class="image-container">
+      <img src="img/undraw_mention_6k5d.png" alt="Illustration">
+    </div>
+    <!-- This div contains the main header and text -->
+    <div class="page-main-component">
+      <div class="page-main-text">
+        <h1>Light, Fast & Powerful</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+          commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+          penatibus et magnis dis parturient montes, nascetur ridiculus
+          mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+          sem. Nulla consequat massa quis enim.
+        </p>
+        <button class="purhcase-now-button">
+          Purchase Now
+        </button>
+      </div>
+      <!-- This container contains the cards -->
+    </div>
+  </div>
+  <!-- Last page -->
+  <svg class="curve" viewBox="0 0 1440 120" preserveAspectRatio="none"
+    style="display: block; width: 100%; height: 120px;">
+    <path d="M0,0 
+       C480,80 960,80 1440,0 
+       L1440,120 L0,120 Z" fill="#f5f7ff" />
+  </svg>
+  <div class="final-page">
+
+    <div class="final-page-text">
+      <div class="final-page-header-text">
+        <h1>A Price To Suit Everyone</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+          sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+        </p>
+      </div>
+      <p id="price-text">$40</p>
+      <p id="price-content">UI Design Kit</p>
+      <p id="button-text">See, One price. Simple.</p>
+      <button class="purhcase-now-button">
+        Purchase Now
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <span class="footer-text">©2023 Yourcompany</span>
+        <h2 class="footer-title">Landing</h2>
+        <button class="footer-purhcase-now-button">Purchase now</button>
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="footer-bottom">
+        <div class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-icons">
+          <a href="#"><img src="img/facebook.svg" alt="Facebook" /></a>
+          <a href="#"><img src="img/linkedin.svg" alt="LinkedIn" /></a>
+          <a href="#"><img src="img/twitter.svg" alt="Twitter" /></a>
+          <a href="#"><img src="img/youtube.svg" alt="YouTube" /></a>
+          <a href="#"><img src="img/instagram.svg" alt="Instagram" /></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <!-- Required for interactive components like dropdowns, modals, and tooltips -->
+    <!-- Placed at the end of the body for faster page loading -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
